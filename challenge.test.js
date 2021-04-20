@@ -38,8 +38,9 @@ const isSimilar = (arr) => {
     const str1 = arr[0];
     const str2 = arr[1];
     let status;
-    console.log(arr);
-    if (str1.length == str2.length){
+    if(str1 == undefined){
+        status = false
+    } else if (str1.length == str2.length ){
         const arr1 = str1.split("");
         const arr2 = str2.split("");
         const arr3 = arr1.filter(ele=>{
@@ -59,6 +60,7 @@ const isSimilar = (arr) => {
     }else{
         status = false;
     }
+    console.log(status);
     return status;
 };
 
