@@ -60,7 +60,6 @@ const isSimilar = (arr) => {
     }else{
         status = false;
     }
-    console.log(status);
     return status;
 };
 
