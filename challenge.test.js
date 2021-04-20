@@ -7,6 +7,16 @@ Write a function that accepts an array of strings. Return the longest string.
 
 const longestString = (arr) => {
     // Solution code here...
+    const str = arr.reduce((acc,ele)=>{
+        let value;
+        if (acc.length > ele.length){
+            value = acc;
+        } else {
+            value = ele;
+        } 
+        return value;
+    },"a");
+    return str;
 };
 
 /* ------------------------------------------------------------------------------------------------
