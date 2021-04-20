@@ -11,9 +11,9 @@ const longestString = (arr) => {
         let value;
         if (acc.length > ele.length){
             value = acc;
-        } else {
+        }else{
             value = ele;
-        } 
+        }
         return value;
     },"a");
     return str;
@@ -35,6 +35,31 @@ isSimilar("cat","act")
 
 const isSimilar = (arr) => {
     // Solution code here...
+    const str1 = arr[0];
+    const str2 = arr[1];
+    let status;
+    console.log(arr);
+    if (str1.length == str2.length){
+        const arr1 = str1.split("");
+        const arr2 = str2.split("");
+        const arr3 = arr1.filter(ele=>{
+            let notExist = true;
+            arr2.forEach(char => {
+                if(char == ele){
+                    notExist = false;
+                }
+            });
+            return notExist;
+        })
+        if(arr3.length == 0){
+            status = true;
+        }else{
+            status = false;
+        }
+    }else{
+        status = false;
+    }
+    return status;
 };
 
 /* ------------------------------------------------------------------------------------------------
